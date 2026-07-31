@@ -1,6 +1,7 @@
 import 'package:arbeit/features/authentication/screens/get_started_screen.dart';
+import 'package:arbeit/features/authentication/screens/login_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
 
 class SecOnboardingScreen extends StatefulWidget {
   const SecOnboardingScreen({super.key});
@@ -31,6 +32,8 @@ class _SecOnboardingScreenState extends State<SecOnboardingScreen> {
             ),
           ),
 
+          SizedBox(height: 20),
+
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
@@ -49,7 +52,7 @@ class _SecOnboardingScreenState extends State<SecOnboardingScreen> {
                   ),
                 ),
 
-                SizedBox(height: 15),
+                SizedBox(height: 5),
 
                 Text(
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
@@ -71,12 +74,12 @@ class _SecOnboardingScreenState extends State<SecOnboardingScreen> {
               //login button
               SizedBox(
                 height: 35 / 812 * size.height,
-                width: 72 / 375 * size.width,
+                width: 80 / 375 * size.width,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => SecOnboardingScreen()),
-                    );
+                    Navigator.of(
+                      context,
+                    ).push(MaterialPageRoute(builder: (_) => LoginScreen()));
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xff0056D2),
@@ -87,17 +90,17 @@ class _SecOnboardingScreenState extends State<SecOnboardingScreen> {
                   ),
                   child: Text(
                     'Login',
-                    style: TextStyle(fontWeight: FontWeight(700), fontSize: 12),
+                    style: TextStyle(fontWeight: FontWeight(700), fontSize: 11),
                   ),
                 ),
               ),
 
-              SizedBox(width: 20),
+              SizedBox(width: 10),
 
               //get started button
               SizedBox(
                 height: 35 / 812 * size.height,
-                width: 112 / 375 * size.width,
+                width: 120 / 375 * size.width,
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.of(context).push(
@@ -108,7 +111,7 @@ class _SecOnboardingScreenState extends State<SecOnboardingScreen> {
                     backgroundColor: Color(0xffffffff),
                     foregroundColor: Color(0Xff0056D2),
                     shape: RoundedRectangleBorder(
-                      side: BorderSide(color: Colors.blue, width: 2),
+                      side: BorderSide(color: Color(0Xff0056D2), width: 1),
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
