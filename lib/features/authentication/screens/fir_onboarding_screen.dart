@@ -29,7 +29,7 @@ class _FirOnboardingScreenState extends State<FirOnboardingScreen> {
             ),
           ),
 
-          SizedBox(height: 70),
+          SizedBox(height: 30),
 
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -63,11 +63,11 @@ class _FirOnboardingScreenState extends State<FirOnboardingScreen> {
             ),
           ),
 
-          SizedBox(height: 40),
+          SizedBox(height: 30),
 
           SizedBox(
             height: 35 / 812 * size.height,
-            width: 69 / 375 * size.width,
+            width: 80 / 375 * size.width,
             child: ElevatedButton(
               onPressed: () {
                 Navigator.of(context).push(
