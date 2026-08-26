@@ -60,6 +60,66 @@ class _HomepageScreenState extends State<HomepageScreen> {
                     SvgPicture.asset("assets/icons/vertical_menu_icon.svg"),
                   ],
                 ),
+                SizedBox(height: 30),
+                Row(
+                  children: [
+                    Text("Daily Job Tips"),
+                    SizedBox(width: 170),
+                    Text("See all"),
+                  ],
+                ),
+
+                SizedBox(height: 20),
+
+                Row(
+                  children: [
+                    Container(
+                      width: 200,
+                      height: 124,
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(0, 86, 210, 0.1),
+                      ),
+                      child: Image.asset("assets/images/homescreen_img1.png"),
+                    ),
+
+                    SizedBox(width: 20),
+
+                    Container(
+                      width: 200,
+                      height: 124,
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(0, 86, 210, 0.1),
+                      ),
+                      child: Image.asset("assets/images/homescreen_img3.png"),
+                    ),
+
+                    SizedBox(width: 20),
+
+                    Container(
+                      width: 200,
+                      height: 124,
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(0, 86, 210, 0.1),
+                      ),
+                      child: Image.asset("assets/images/homescreen_img2.png"),
+                    ),
+                  ],
+                ),
+
+                SizedBox(height: 30),
+
+                Padding(
+                  padding: const EdgeInsets.all(25.0),
+                  child: Row(
+                    children: [
+                      Text("Recommended for you"),
+
+                      SizedBox(width: 109),
+
+                      Text("See all"),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
