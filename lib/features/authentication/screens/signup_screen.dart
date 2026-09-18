@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:arbeit/features/authentication/screens/homepage_screen.dart';
+import 'package:arbeit/features/authentication/screens/login_screen.dart';
+import 'package:arbeit/features/authentication/screens/terms_conditions.dart';
+import 'package:arbeit/features/authentication/screens/privacy_policy.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -17,7 +20,7 @@ class _SignupScreenState extends State<SignupScreen> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
-          // crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           //Why my widget didnt get centralized in a column with crossAxis set to center
           children: [
             SizedBox(height: 152),
@@ -25,7 +28,7 @@ class _SignupScreenState extends State<SignupScreen> {
             SizedBox(height: 15),
             Text("Create an account"),
 
-            const SizedBox(height: 40),
+            const SizedBox(height: 30),
 
             Padding(
               padding: const EdgeInsets.all(26.0),
@@ -138,7 +141,7 @@ class _SignupScreenState extends State<SignupScreen> {
               ),
             ),
 
-            SizedBox(height: 40),
+            SizedBox(height: 30),
 
             Text("Or"),
 
@@ -151,9 +154,16 @@ class _SignupScreenState extends State<SignupScreen> {
               children: [
                 Text("Already have an account?"),
                 const SizedBox(width: 5),
-                Text(
-                  "Log in",
-                  style: TextStyle(color: Color(0xff0056D2), fontSize: 12),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(
+                      context,
+                    ).push(MaterialPageRoute(builder: (_) => LoginScreen()));
+                  },
+                  child: Text(
+                    "Log in",
+                    style: TextStyle(color: Color(0xff0056D2), fontSize: 12),
+                  ),
                 ),
               ],
             ),
@@ -170,9 +180,22 @@ class _SignupScreenState extends State<SignupScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      "Terms of Service",
-                      style: TextStyle(color: Color(0xff0056D2), fontSize: 12),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => TermsConditionsScreen(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        "Terms of Service",
+                        style: TextStyle(
+                          color: Color(0xff0056D2),
+                          fontSize: 12,
+                        ),
+                      ),
                     ),
 
                     const SizedBox(width: 4),
@@ -181,9 +204,22 @@ class _SignupScreenState extends State<SignupScreen> {
 
                     const SizedBox(width: 4),
 
-                    Text(
-                      "Privacy Policy",
-                      style: TextStyle(fontSize: 12, color: Color(0Xff0056D2)),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => PrivacyPolicy(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        "Privacy Policy",
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Color(0Xff0056D2),
+                        ),
+                      ),
                     ),
                   ],
                 ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:arbeit/features/authentication/screens/terms_conditions.dart';
 import 'package:arbeit/features/authentication/screens/privacy_policy.dart';
+import 'package:arbeit/features/authentication/screens/signup_screen.dart';
 
 class GetStartedScreen extends StatefulWidget {
   const GetStartedScreen({super.key});
@@ -42,11 +43,19 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                 Text("Dont have an account?"),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Text(
-                    "Register here",
-                    style: TextStyle(
-                      color: Color(0xff0056D2),
-                      fontWeight: FontWeight(600),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SignupScreen()),
+                      );
+                    },
+                    child: Text(
+                      "Register here",
+                      style: TextStyle(
+                        color: Color(0xff0056D2),
+                        fontWeight: FontWeight(600),
+                      ),
                     ),
                   ),
                 ),
