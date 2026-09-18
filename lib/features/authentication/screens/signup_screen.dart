@@ -1,15 +1,14 @@
-import 'package:arbeit/features/authentication/screens/SIGNUP_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:arbeit/features/authentication/screens/homepage_screen.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignupScreen> createState() => _SignupScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignupScreenState extends State<SignupScreen> {
   bool isInvisible = true;
 
   @override
@@ -24,14 +23,30 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(height: 152),
             Center(child: Image.asset("assets/images/logo.png")),
             SizedBox(height: 15),
-            Text("Login to your account"),
+            Text("Create an account"),
 
-            const SizedBox(height: 50),
+            const SizedBox(height: 40),
 
             Padding(
               padding: const EdgeInsets.all(26.0),
               child: Column(
                 children: [
+                  TextFormField(
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                      labelText: "Full name(Required)",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        borderSide: BorderSide(
+                          color: Color(0xff0056D2),
+                          width: 2,
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 15),
+
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
@@ -111,7 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       child: Text(
-                        'Login with Email',
+                        'Create an Account',
                         style: TextStyle(
                           fontWeight: FontWeight(700),
                           fontSize: 12,
@@ -123,25 +138,22 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
 
+            SizedBox(height: 40),
+
+            Text("Or"),
+
+            SizedBox(height: 15),
+
+            Column(),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Dont have an account?"),
+                Text("Already have an account?"),
                 const SizedBox(width: 5),
-
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const SignupScreen(),
-                      ),
-                    );
-                  },
-                  child: Text(
-                    "Register here",
-                    style: TextStyle(color: Color(0xff0056D2), fontSize: 12),
-                  ),
+                Text(
+                  "Log in",
+                  style: TextStyle(color: Color(0xff0056D2), fontSize: 12),
                 ),
               ],
             ),

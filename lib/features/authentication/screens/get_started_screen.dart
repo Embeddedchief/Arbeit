@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:arbeit/features/authentication/screens/terms_conditions.dart';
+import 'package:arbeit/features/authentication/screens/privacy_policy.dart';
 
 class GetStartedScreen extends StatefulWidget {
   const GetStartedScreen({super.key});
@@ -59,11 +61,21 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                "Terms of Service",
-                style: TextStyle(
-                  color: Color(0xff0056D2),
-                  fontWeight: FontWeight(600),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => TermsConditionsScreen(),
+                    ),
+                  );
+                },
+                child: Text(
+                  "Terms of Service",
+                  style: TextStyle(
+                    color: Color(0xff0056D2),
+                    fontWeight: FontWeight(600),
+                  ),
                 ),
               ),
 
@@ -74,11 +86,19 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                child: Text(
-                  "Privacy Policy",
-                  style: TextStyle(
-                    color: Color(0xff0056D2),
-                    fontWeight: FontWeight(600),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PrivacyPolicy()),
+                    );
+                  },
+                  child: Text(
+                    "Privacy Policy",
+                    style: TextStyle(
+                      color: Color(0xff0056D2),
+                      fontWeight: FontWeight(600),
+                    ),
                   ),
                 ),
               ),
