@@ -69,9 +69,23 @@ class _HomepageScreenState extends State<HomepageScreen> {
 
                   Row(
                     children: [
-                      Text("Daily Job Tips"),
+                      Text(
+                        "Daily Job Tips",
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight(700),
+                        ),
+                      ),
+
                       SizedBox(width: 170),
-                      Text("See all"),
+
+                      Text(
+                        "See all",
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: Color(0xff0056D2),
+                        ),
+                      ),
                     ],
                   ),
 
@@ -81,42 +95,18 @@ class _HomepageScreenState extends State<HomepageScreen> {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
-                        Container(
-                          width: 200,
-                          height: 124,
-                          decoration: BoxDecoration(
-                            color: Color.fromRGBO(0, 86, 210, 0.1),
-                          ),
-                          child: Image.asset(
-                            "assets/images/homescreen_img1.png",
-                          ),
+                        jobTipsWidget("assets/images/homescreen_img1.png"),
+
+                        SizedBox(width: 20),
+
+                        jobTipsWidget(
+                          "assets/images/homescreen_img3.png",
+                          'How to build a strong online and PDF portfolio',
                         ),
 
                         SizedBox(width: 20),
 
-                        Container(
-                          width: 200,
-                          height: 124,
-                          decoration: BoxDecoration(
-                            color: Color.fromRGBO(0, 86, 210, 0.1),
-                          ),
-                          child: Image.asset(
-                            "assets/images/homescreen_img3.png",
-                          ),
-                        ),
-
-                        SizedBox(width: 20),
-
-                        Container(
-                          width: 200,
-                          height: 124,
-                          decoration: BoxDecoration(
-                            color: Color.fromRGBO(0, 86, 210, 0.1),
-                          ),
-                          child: Image.asset(
-                            "assets/images/homescreen_img2.png",
-                          ),
-                        ),
+                        jobTipsWidget("assets/images/homescreen_img2.png"),
                       ],
                     ),
                   ),
@@ -125,9 +115,21 @@ class _HomepageScreenState extends State<HomepageScreen> {
 
                   Row(
                     children: [
-                      Text("Recommended for you"),
+                      Text(
+                        "Recommended for you",
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight(700),
+                        ),
+                      ),
                       SizedBox(width: 109),
-                      Text("See all"),
+                      Text(
+                        "See all",
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Color(0xff0056D2),
+                        ),
+                      ),
                     ],
                   ),
 
@@ -324,7 +326,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                 ),
 
                 SizedBox(height: 20),
-                
+
                 Container(
                   height: 328 / 812 * size.height,
                   width: 115 / 375 * size.width,
@@ -362,4 +364,33 @@ class _HomepageScreenState extends State<HomepageScreen> {
       ),
     );
   }
+}
+
+Widget jobTipsWidget(String imagePath, [String? bodyText]) {
+  return Container(
+    //width: 200,
+    height: 124,
+    decoration: BoxDecoration(
+      color: Color.fromRGBO(0, 86, 210, 0.1),
+      borderRadius: BorderRadius.circular(15),
+    ),
+    child: Stack(
+      children: [
+        Image.asset(imagePath, fit: BoxFit.cover),
+        if (bodyText != null)
+          Positioned(
+            bottom: 21,
+            left: 20,
+            child: Text(
+              bodyText,
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 10,
+                color: Colors.white,
+              ),
+            ),
+          ),
+      ],
+    ),
+  );
 }
