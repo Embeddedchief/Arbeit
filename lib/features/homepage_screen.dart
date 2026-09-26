@@ -1,3 +1,6 @@
+import 'package:arbeit/features/applications/screens/application_screen.dart';
+import 'package:arbeit/features/messages/screens/messages_screen.dart';
+import 'package:arbeit/features/profiles/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:arbeit/features/authentication/screens/sec_onboarding_screen.dart';
@@ -294,68 +297,24 @@ class _HomepageScreenState extends State<HomepageScreen> {
             ),
             Column(
               children: [
-                Container(
-                  width: 115 / 375 * size.height,
-                  height: 328 / 812 * size.width,
-                  decoration: BoxDecoration(),
-                  child: Column(
-                    children: [
-                      Text("Senior Product Designer at Facebook"),
-
-                      SizedBox(height: 7),
-
-                      Row(
-                        children: [
-                          Text("\$3,000 - \$4,000 / Month"),
-                          SizedBox(width: 15),
-                          Text("Figma - XD-UI/UX"),
-                        ],
-                      ),
-
-                      SizedBox(height: 10),
-
-                      Row(
-                        children: [
-                          Text("Cairo(Remote) - Fulltime"),
-                          SizedBox(width: 15),
-                          Text("Today"),
-                        ],
-                      ),
-                    ],
-                  ),
+                jobDescription(
+                  title: 'Senior Product Designer at Facebook',
+                  amount: '\$3 000 - \$4 000 / Month',
+                  location: 'Cairo (Remote) - Full time',
+                  category: 'Figma - XD - UI/UX',
+                  imagePath: 'asset/images/logo.png',
+                  isFav: true,
                 ),
 
                 SizedBox(height: 20),
 
-                Container(
-                  height: 328 / 812 * size.height,
-                  width: 115 / 375 * size.width,
-                  decoration: BoxDecoration(),
-                  child: Column(
-                    children: [
-                      Text(
-                        "Junior Graphic Designer at South Dakota University",
-                      ),
-
-                      Row(
-                        children: [
-                          Text("\$2,500 - \$3,000 / Month"),
-                          SizedBox(width: 15),
-                          Text("Photoshop - Illustrator"),
-                        ],
-                      ),
-
-                      SizedBox(height: 10),
-
-                      Row(
-                        children: [
-                          Text("South Dakota - Fulltime"),
-                          SizedBox(width: 15),
-                          Text("Today"),
-                        ],
-                      ),
-                    ],
-                  ),
+                jobDescription(
+                  title: 'Senior Product Designer at Facebook',
+                  amount: '\$3 000 - \$4 000 / Month',
+                  location: 'Cairo (Remote) - Full time',
+                  category: 'Figma - XD - UI/UX',
+                  imagePath: 'asset/images/logo.png',
+                  isFav: true,
                 ),
               ],
             ),
@@ -366,6 +325,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
   }
 }
 
+//jobTipsWidget template class
 Widget jobTipsWidget(String imagePath, [String? bodyText]) {
   return Container(
     //width: 200,
@@ -393,4 +353,106 @@ Widget jobTipsWidget(String imagePath, [String? bodyText]) {
       ],
     ),
   );
+}
+
+//job description template class
+Widget jobDescription({
+  required String title,
+  required String amount,
+  required String location,
+  required String category,
+  required String imagePath,
+  required bool isFav,
+}) {
+  return Container(
+    width: 115 / 375,
+    height: 328 / 812,
+    decoration: BoxDecoration(),
+    child: Column(
+      children: [
+        Text("Senior Product Designer at Facebook"),
+
+        SizedBox(height: 7),
+
+        Row(
+          children: [
+            Text("\$3,000 - \$4,000 / Month"),
+            SizedBox(width: 15),
+            Text("Figma - XD-UI/UX"),
+          ],
+        ),
+
+        SizedBox(height: 10),
+
+        Row(
+          children: [
+            Text("Cairo(Remote) - Fulltime"),
+            SizedBox(width: 15),
+            Text("Today"),
+          ],
+        ),
+      ],
+    ),
+  );
+}
+
+class NavigationWidget extends StatefulWidget {
+  const NavigationWidget({super.key});
+
+  @override
+  State<NavigationWidget> createState() => _NavigationWidgetState();
+}
+
+class _NavigationWidgetState extends State<NavigationWidget> {
+  final List<Widget> pages = [
+    HomepageScreen(),
+    ApplicationScreen(),
+    MessagesScreen(),
+    ProfileScreen(),
+  ];
+
+  Widget build(BuildContext context) {
+    int _currentIndex = 0;
+    return Scaffold(
+      body: pages[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        selectedItemColor: const Color.fromARGB(255, 6, 83, 215),
+        unselectedItemColor: const Color.fromRGBO(0, 86, 210, 0.5),
+
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_outlined),
+            activeIcon: Icon(Icons.home_rounded),
+            label: 'Home',
+          ),
+
+          BottomNavigationBarItem(
+            icon: Icon(Icons.menu_outlined),
+            activeIcon: Icon(Icons.menu_rounded),
+            label: 'Applications',
+          ),
+
+          BottomNavigationBarItem(
+            icon: Icon(Icons.message_outlined),
+            activeIcon: Icon(Icons.message_rounded),
+            label: 'Messages',
+          ),
+
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outlined),
+            activeIcon: Icon(Icons.person_2_rounded),
+            label: 'Profile',
+          ),
+        ],
+
+        currentIndex: _currentIndex,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+      ),
+    );
+  }
 }

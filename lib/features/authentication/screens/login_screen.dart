@@ -1,6 +1,6 @@
-import 'package:arbeit/features/authentication/screens/SIGNUP_screen.dart';
+import 'package:arbeit/features/authentication/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:arbeit/features/authentication/screens/homepage_screen.dart';
+import 'package:arbeit/features/homepage_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -100,7 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).push(
-                          MaterialPageRoute(builder: (_) => HomepageScreen()),
+                          MaterialPageRoute(builder: (_) => NavigationWidget()),
                         );
                       },
                       style: ElevatedButton.styleFrom(
