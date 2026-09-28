@@ -30,17 +30,17 @@ class PrivacyPolicy extends StatelessWidget {
               ),
               SizedBox(height: 20),
               Text(
-                "Dolor sit amet, consectetur adipiscing elit. Mauris, aliquam leo volutpat sed. Fermentum placerat sed quisque sit. Senectus eget enim nunc, vel volutpat, scelerisque bibendum tincidunt. Vestibulum lectus consequat massa enim consequat eget nunc etiam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris, aliquam leo volutpat sed. Fermentum placerat sed quisque sit.",
+                "Dolor sit amet, consectetur adipiscing elit. Mauris, aliquam leo volutpat sed. Fermentum placerat sed quisque sit. Senectus eget enim nunc, vel volutpat, scelerisque bibendum tincidunt. Vestibulum lectus consequat massa enim consequat eget nunc etiam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris, aliquam leo volutpat sed. Fermentum placerat sed quisque sit",
                 style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
               ),
               SizedBox(height: 15),
               Text(
-                "Eget enim nunc, vel volutpat, scelerisque bibendum tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris, aliquam leo volutpat sed. Fermentum placerat sed quisque sit. Senectus eget enim nunc, vel volutpat, scelerisque bibendum tincidunt. Vestibulum lectus consequat massa enim consequat eget nunc etiam.",
+                "Eget enim nunc, vel volutpat, scelerisque bibendum tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris, aliquam leo volutpat sed. Fermentum placerat sed quisque sit. Senectus eget enim nunc, vel volutpat, scelerisque bibendum tincidunt. Vestibulum lectus consequat massa enim consequat eget nunc etiam",
                 style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
               ),
               SizedBox(height: 15),
               Text(
-                "Mentum placerat sed quisque sit. Senectus eget enim nunc, vel volutpat, scelerisque bibendum tincidunt. Vestibulum lectus consequat massa enim consequat eget nunc etiam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris, aliquam leo volutpat sed. Fermentum placerat sed quisque sit.",
+                "Mentum placerat sed quisque sit. Senectus eget enim nunc, vel volutpat,  ClientException with SocketException: Failed host lookup: 'pub.dev' (OS Error: No such host is k, Mauris, aliquam leo volutpat sed. Fermentum placerat sed quisque sit.",
                 style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
               ),
             ],
