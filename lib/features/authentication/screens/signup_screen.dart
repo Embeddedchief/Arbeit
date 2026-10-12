@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:arbeit/features/navigations/screens/homepage_screen.dart';
+// import 'package:arbeit/features/navigations/screens/homepage_screen.dart';
 import 'package:arbeit/features/authentication/screens/login_screen.dart';
 import 'package:arbeit/features/authentication/screens/terms_conditions.dart';
 import 'package:arbeit/features/authentication/screens/privacy_policy.dart';
@@ -117,9 +117,9 @@ class _SignupScreenState extends State<SignupScreen> {
                     width: 323 / 375 * size.width,
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(builder: (_) => NavigationWidget()),
-                        );
+                        // Navigator.of(context).push(
+                        //   // MaterialPageRoute(builder: (_) => ,
+                        // );
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color(0xff0056D2),
